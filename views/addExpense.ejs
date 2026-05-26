@@ -7,25 +7,33 @@
 
 <body class="bg-light">
 
-<nav class="navbar navbar-dark bg-dark px-3">
-    <a href="/" class="navbar-brand">Budget App</a>
-</nav>
+    <nav class="navbar navbar-dark bg-dark px-3">
+        <a href="/" class="navbar-brand">Budget App</a>
+    </nav>
 
-<div class="container mt-5">
+    <div class="container mt-5">
+        <div class="card shadow p-4">
+            <h2 class="mb-4">Add Expense</h2>
 
-    <div class="card p-4 mx-auto" style="max-width:500px;">
-        <h3 class="mb-3">Add Expenses</h3>
+            <form action="/expense" method="POST">
+                
+                <div class="mb-3">
+                    <label class="form-label">Expense Name</label>
+                    <input type="text" name="name" class="form-control" required>
+                </div>
 
-        <form method="POST" action="/expense">
-            <input type="number" name="amount" class="form-control mb-3" placeholder="Enter expense amount" required>
+                <div class="mb-3">
+                    <label class="form-label">Amount</label>
+                    <input type="number" name="amount" class="form-control" required>
+                </div>
 
-            <button class="btn btn-danger w-100">Add Expense</button>
-        </form>
+                <button type="submit" class="btn btn-danger">
+                    Add Expense
+                </button>
 
-        <a href="/" class="btn btn-link mt-3">Back</a>
+            </form>
+        </div>
     </div>
-
-</div>
 
 </body>
 </html>
